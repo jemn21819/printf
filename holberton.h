@@ -1,6 +1,11 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+#include <unistd.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 /* _putchar */
 int _putchar(char c);
 
@@ -8,12 +13,20 @@ int _putchar(char c);
 /* _printf.c */
 int _printf(const char *format, ...);
 
+/**
+ * struct convert - define structure specification
+ * and fuctions
+ * @spec: Format Specification
+ * @f: the function associated
+ */
 
-typedef struct convert
+struct convert
 {
 	char *spec;
 	int (*f)(va_list);
-} convert_t;
+};
+typedef struct convert convert_t;
+
 
 /*Handles printing a string, char by char*/
 int print_chars(va_list);
