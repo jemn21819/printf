@@ -15,7 +15,11 @@ typedef struct convert
 	int (*f)(va_list);
 } convert_t;
 
+/*Handles printing a string, char by char*/
+int print_chars(va_list);
 
+/* Handles printing an integer number, digit by digit */
+int print_integer(va_list);
 
 #endif
 
