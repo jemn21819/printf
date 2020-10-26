@@ -21,5 +21,8 @@ int print_chars(va_list);
 /* Handles printing an integer number, digit by digit */
 int print_integer(va_list);
 
+/* helper */
+int print_number(int n);
+
 #endif
 
