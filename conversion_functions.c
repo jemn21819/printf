@@ -15,7 +15,6 @@ int print_bin(va_list list)
 	{
 		binary[i] = u_n % 2;
 		u_n /= 2;
-		i++;
 	}
 	count = i;
 
@@ -25,7 +24,7 @@ int print_bin(va_list list)
 	return (count);
 }
 /**
- * printf_unsign - handles printing and unsigned int va_arg
+ * print_unsign - handles printing and unsigned int va_arg
  * @list: contains the argument to print
  * Return: amount of digits printed
  */
