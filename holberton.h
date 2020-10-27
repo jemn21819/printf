@@ -9,33 +9,39 @@
 /* _putchar */
 int _putchar(char c);
 
+/* get_func */
+int (*get_func(const char *format))(va_list);
 
 /* _printf.c */
 int _printf(const char *format, ...);
 
+
+int print_chars(va_list c);
+int print_chars(va_list s);
+int print_integer(va_list i);
+int print_integer(va_list d);
+int print_rev(va_list r);
+int print_bin(va_(va_list b);
+int print_unsign(va_list u);
+int print_octal(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_rot13(va_list R);
+
+
+
 /**
  * struct convert - define structure specification
- * and fuctions
+ *
  * @spec: Format Specification
  * @f: the function associated
  */
 
-struct convert
+typedef struct convert
 {
 	char *spec;
 	int (*f)(va_list);
-};
-typedef struct convert convert_t;
+} convert_t;
 
-
-/*Handles printing a string, char by char*/
-int print_chars(va_list);
-
-/* Handles printing an integer number, digit by digit */
-int print_integer(va_list);
-
-/* helper */
-int print_number(int n);
 
 #endif
-
