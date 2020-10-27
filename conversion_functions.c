@@ -39,7 +39,6 @@ int print_unsign(va_list list)
 	{
 		num[i] = u_n % 10;
 		u_n /= 10;
-		i++;
 	}
 	count = i;
 
