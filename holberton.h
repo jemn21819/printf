@@ -40,7 +40,7 @@ int print_int(va_list);
 void print_int_help(int n);
 
 int print_rev(va_list r);
-int print_bin(va_(va_list b);
+int print_bin(va_list b);
 int print_unsign(va_list u);
 int print_octal(va_list o);
 int print_x(va_list x);
