@@ -20,6 +20,8 @@ int print_chars(va_list list)
 	char *str = va_arg(list, char *);
 	int i;
 
+	if (str == NULL ||  list == NULL)
+		return (0);
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 	return (i);
@@ -37,7 +39,9 @@ int print_int(va_list list)
 
 	print_int_help(n);
 
-	while (n > 0)
+	if (n < 0)
+		digits++;
+	while (n != 0)
 	{
 		n /= 10;
 		digits++;
