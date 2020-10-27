@@ -18,14 +18,16 @@ int _printf(const char *format, ...)
 	{
 		if (flag)
 		{
+			if (format[i])
+				continue;
 			f = get_func(&format[i]);
 			if (f != NULL)
 				prt_chars += f(list);
 			else
 			{
+				prt_chars += _putchar('%');
 				if (format[i] != '%')
 				{
-					prt_chars += _putchar('%');
 					prt_chars += _putchar(format[i]);
 				}
 			}
