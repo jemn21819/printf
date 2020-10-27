@@ -16,7 +16,7 @@ int print_rev(va_list list)
 		;
 	for (i -= 1; i >= 0; i--)
 	{
-		_putchar(st[i]);
+		_putchar(str[i]);
 		x++;
 	}
 	return (x);
