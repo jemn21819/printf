@@ -18,6 +18,8 @@ int (*get_func(const char *format))(va_list)
 		{"b", print_bin},
 		{"u", print_unsign},
 		{"o", print_octal},
+		{"x", print_x},
+		{"X", print_X},
 		{NULL, NULL}
 	};
 
