@@ -14,6 +14,7 @@ int (*get_func(const char *format))(va_list)
 		{"s", print_chars},
 		{"i", print_int},
 		{"d", print_int},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 

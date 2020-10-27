@@ -38,7 +38,8 @@ int print_chars(va_list);
 int print_int(va_list);
 /* recursively print an integer*/
 void print_int_help(int n);
-
+/* handles the '%' sign*/
+int print_percent(va_list list);
 int print_rev(va_list r);
 int print_bin(va_list b);
 int print_unsign(va_list u);

@@ -19,8 +19,8 @@ int print_chars(va_list list)
 {
 	char *str = va_arg(list, char *);
 	int i;
-
-	if (str == NULL ||  list == NULL)
+	
+	if (str == NULL )
 		return (0);
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
@@ -69,4 +69,12 @@ void print_int_help(int n)
 		print_int_help(u_n / 10);
 	_putchar(u_n % 10 + '0');
 }
-
+/**
+ * print_percent - prints '%' when especially requested
+ * @list: argument list {wont be used}
+ * Return: always 1
+ */
+int print_percent(va_list __attribute__((unused)) list)
+{
+	return (_putchar('%'));
+}
