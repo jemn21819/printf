@@ -1,62 +1,68 @@
 #include "holberton.h"
 
 /**
- * print_chars - Handles printing a string, char by char
- * @list: argument list with the next arg to handle
- *
- * Return: the amount of characters printed, -1 if error
+ * printAchar - Handles printing a single char passed as va_list
+ * @list: contains the argument to retrieve and print
+ * Return: amount of chars printed, -1 if error
+ */
+int printAchar(va_list list)
+{
+	return (_putchar(va_arg(list, int)));
+}
+
+/**
+ * print_chars - Handles printing a string passed as va_list
+ * @list: contains the argument to retrieve and print
+ * Return: amount of chars printed
  */
 int print_chars(va_list list)
 {
 	char *str = va_arg(list, char *);
-	int sum = 0;
+	int i;
 
-	if (str == NULL)
-		return (-1);
-	while (str)
-	{
-		_putchar(*str);
-		str++;
-		sum++;
-	}
-	return (sum);
+	for (i = 0; str[i]; i++)
+		_putchar(str[i]);
+	return (i);
 }
 
 /**
- * print_integer - Handles printing an integer number, digit by digit
- * @list: argument list with the next arg to handle
- *
- * Return: the amount of characters printed, -1 if error
+ * print_int - Handles printing an integer number passed as va_list
+ * @list: contains the argument to retrieve and print
+ * Return: amount of digits printed
  */
-int print_integer(va_list list)
+int print_int(va_list list)
 {
-	return (print_number(va_arg(list, int)));
+	int n = va_arg(list, int);
+	int digits = 0;
+
+	print_int_help(n);
+
+	while (n > 0)
+	{
+		n /= 10;
+		digits++;
+	}
+
+	return (digits);
 }
 /**
- *print_number - print and integer character by character
- *@n: integer to print
- *
- *Return: amount of characters printed
+ * print_int_help - takes an int number, prints it using recursion
+ * @n: integer number to print
  */
-int print_number(int n)
+void print_int_help(int n)
 {
 	unsigned int u_n;
-	int count = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		count++;
 		u_n = -n;
 	}
 	else
 		u_n = n;
 
 	if (u_n / 10 != 0)
-		count += print_number(u_n / 10);
+		print_int_help(u_n / 10);
 	_putchar(u_n % 10 + '0');
-	count++;
-
-	return (count);
 }
 

@@ -5,51 +5,35 @@
  * @format: contain the specifies
  * Return: the number of characters printed, -1 if error ocurred
  */
-
 int _printf(const char *format, ...)
 {
-	printf("punto 1");
-	int i, x, flag = 0, prt_chars = 0;
-	char *ch = NULL;
-	va_list arg_list;
-	printf("punto 2");
-	convert_t f_list[] = {
-		{"c", print_chars},
-		{"s", print_chars},
-		{"%", print_chars},
-		{"d", print_integer},
-		{"i", print_integer},
-		{NULL, NULL}
-	};
-	printf("punto 3");
+	int i, prt_chars = 0, flag = 0;
+	va_list list;
+	int (*f)(va_list);
 
 	if (format == NULL)
 		return (-1);
-
-	va_start(arg_list, format);
-	printf("punto 4");
-	for (i = 0; format[i] != '\0'; i++)
+	va_start(list, format);
+	for (i = 0; format[i]; i++)
 	{
-		*ch =  format[i];
 		if (flag)
 		{
-			for (x = 0; f_list[x].f != NULL; x++)
+			f = get_func(&format[i]);
+			if (f != NULL)
+				prt_chars += f(list);
+			else
 			{
-				printf("point 5");
-				if (ch == f_list[x].spec)
-					prt_chars += f_list[x].f(arg_list);
-				printf("point 6");
+				prt_chars += _putchar('%');
+				if (format[i] != '%')
+					prt_chars += _putchar(format[i]);
 			}
 			flag = 0;
 		}
+		else if (format[i] == '%')
+			flag = 1;
 		else
-			if (*ch == '%')
-				flag = 1;
-			else
-				prt_chars += _putchar(*ch);
+			prt_chars += _putchar(format[i]);
 	}
-
-	va_end(arg_list);
+	va_end(list);
 	return (prt_chars);
 }
-
