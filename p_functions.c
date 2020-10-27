@@ -19,8 +19,8 @@ int print_chars(va_list list)
 {
 	char *str = va_arg(list, char *);
 	int i;
-	
-	if (str == NULL )
+
+	if (str == NULL)
 		return (0);
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
