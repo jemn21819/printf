@@ -52,7 +52,6 @@ int print_unsign(va_list list)
  * @list: contains the octal argument
  * Return: amount of digits printed
  */
-
 int print_octal(va_list list)
 {
 	unsigned int u_n = va_arg(list, unsigned int);
@@ -68,6 +67,64 @@ int print_octal(va_list list)
 	count = i;
 	for (i--; i >= 0; i--)
 		_putchar(octal[i] + '0');
+
+	return (count);
+}
+/**
+ * print_x - prints an unsigned int passed as va_arg
+ * in hexadecimal
+ * @list: contains the argument to extract, convert an print
+ * Return: the amount of digits printed
+ */
+int print_x(va_list list)
+{
+	unsigned int u_n = va_arg(list, unsigned int);
+	char hexa[100];
+	int i = 0, temp = 0, count = 0;
+
+	while (u_n != 0)
+	{
+		temp = u_n % 16;
+		if (temp < 10)
+			hexa[i] = temp + '0';
+		else
+			hexa[i] = temp + 'a' - 10;
+		i++;
+		u_n /= 16;
+	}
+	count = i;
+
+	for (i--; i >= 0; i--)
+		_putchar(hexa[i]);
+
+	return (count);
+}
+/**
+ * print_X - prints an unsigned int passed as va_arg
+ * in UPPERCASE hexadecimal
+ * @list: contains the argument to extract, convert an print
+ * Return: the amount of digits printed
+ */
+int print_X(va_list list)
+{
+	unsigned int u_n = va_arg(list, unsigned int);
+	char hexa[100];
+	int i = 0, temp = 0, count = 0;
+
+	while (u_n != 0)
+	{
+		temp = u_n % 16;
+		if (temp < 10)
+			hexa[i] = temp + '0';
+		else
+			hexa[i] = temp + 'A' - 10;
+		i++;
+		u_n /= 16;
+	}
+	count = i;
+
+	for (i--; i >= 0; i--)
+		_putchar(hexa[i]);
 
 	return (count);
 }
