@@ -6,6 +6,16 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/* _putchar */
+int _putchar(char c);
+
+/* get_func */
+int (*get_func(const char *format))(va_list);
+
+/* _printf.c */
+int _printf(const char *format, ...);
+
+
 /**
  * struct convert - define structure specification
  *
@@ -20,20 +30,20 @@ typedef struct convert
 
 /* get_func */
 int (*get_func(const char *format))(va_list);
-/*printing character by charcater*/
-int _putchar(char c);
-
-/* _printf.c */
-int _printf(const char *format, ...);
 /* one char but arg is va_list*/
 int printAchar(va_list);
 /*Handles printing a string, char by char*/
 int print_chars(va_list);
-
 /* Handles printing an integer number, digit by digit */
 int print_int(va_list);
-
-/* helper */
+/* recursively print an integer*/
 void print_int_help(int n);
 
+int print_rev(va_list r);
+int print_bin(va_(va_list b);
+int print_unsign(va_list u);
+int print_octal(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_rot13(va_list R);
 #endif
