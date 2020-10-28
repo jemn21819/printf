@@ -21,7 +21,7 @@ int (*get_func(const char *format))(va_list)
 		{"x", print_x},
 		{"X", print_X},
 		{"r", print_rev},
-		{"R". print_rot13},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 
