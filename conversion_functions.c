@@ -11,6 +11,12 @@ int print_bin(va_list list)
 	int binary[30];
 	int i = 0, count = 0;
 
+	if (u_n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	for (i = 0; u_n > 0; i++)
 	{
 		binary[i] = u_n % 2;
@@ -33,6 +39,12 @@ int print_unsign(va_list list)
 	unsigned int u_n = va_arg(list, unsigned int);
 	int num[30];
 	int i = 0, count = 0;
+
+	if (u_n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	for (i = 0; u_n > 0; i++)
 	{
@@ -58,6 +70,12 @@ int print_octal(va_list list)
 	int octal[100];
 	int i = 0, count = 0;
 
+	if (u_n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	for (i = 0; u_n != 0; i++)
 	{
 		octal[i] = u_n % 8;
@@ -81,6 +99,12 @@ int print_x(va_list list)
 	unsigned int u_n = va_arg(list, unsigned int);
 	char hexa[100];
 	int i = 0, temp = 0, count = 0;
+
+	if (u_n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	while (u_n != 0)
 	{
@@ -110,6 +134,12 @@ int print_X(va_list list)
 	unsigned int u_n = va_arg(list, unsigned int);
 	char hexa[100];
 	int i = 0, temp = 0, count = 0;
+
+	if (u_n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	while (u_n != 0)
 	{
