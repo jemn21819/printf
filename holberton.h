@@ -40,7 +40,9 @@ int print_int(va_list);
 void print_int_help(int n);
 /* handles the '%' sign*/
 int print_percent(va_list list);
+/* prints a string in reverse */
 int print_rev(va_list r);
+/*takes an unsigned int from va_arg and prints a binary*/
 int print_bin(va_list b);
 int print_unsign(va_list u);
 int print_octal(va_list o);
