@@ -48,6 +48,8 @@ int print_unsign(va_list u);
 int print_octal(va_list o);
 /*print va_arg argument as lowercase hexadecimal*/
 int print_x(va_list x);
+/*prints va_arg argument as UPPERCASE hexadecimal*/
 int print_X(va_list X);
+/*encodes string using rot13*/
 int print_rot13(va_list R);
 #endif
