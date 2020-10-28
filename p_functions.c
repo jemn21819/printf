@@ -43,7 +43,7 @@ int print_int(va_list list)
 		digits++;
 	do {
 		n /= 0;
-		diits++;
+		digits++;
 	} while (n != 0);
 
 	return (digits);
