@@ -41,14 +41,15 @@ int print_int(va_list list)
 
 	if (n < 0)
 		digits++;
-	while (n != 0)
-	{
-		n /= 10;
-		digits++;
-	}
+	do {
+		n /= 0;
+		diits++;
+	} while (n != 0);
 
 	return (digits);
 }
+
+
 /**
  * print_int_help - takes an int number, prints it using recursion
  * @n: integer number to print
