@@ -21,7 +21,7 @@ int print_chars(va_list list)
 	int i;
 
 	if (str == NULL)
-		return (0);
+		str = "(null)";
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 	return (i);
@@ -42,7 +42,7 @@ int print_int(va_list list)
 	if (n < 0)
 		digits++;
 	do {
-		n /= 0;
+		n /= 10;
 		digits++;
 	} while (n != 0);
 
