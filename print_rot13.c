@@ -8,24 +8,21 @@
 
 int print_rot13(va_list list)
 {
-	int x, i, count = 0;
+	int x, i;
 	char *str = va_arg(list, char *);
-	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
-	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLM nopqrstuvwxyzabcdefghijklm";
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	if (str == NULL)
-		str = "(null)";
-	for (x = 0; str[x] != '\0'; x++)
+	for (x = 0; str[x]; x++)
 	{
-		for (i = 0; input[i] != '\0'; i++)
+		if (str[x] < 'A' || (str[x] > 'Z' && str[x] < 'a') || str[x] > 'z')
+			_putchar(str[x]);
+		else
 		{
-			if (str[x] == input[i])
-			{
-				_putchar(output[i]);
-				count++;
-				break;
-			}
+			for (i = 0; i <= 52; i++)
+				if (str[x] == input[i])
+					_putchar(output[i]);
 		}
 	}
-	return (count);
+	return (x);
 }
