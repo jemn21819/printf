@@ -46,6 +46,7 @@ int print_rev(va_list r);
 int print_bin(va_list b);
 int print_unsign(va_list u);
 int print_octal(va_list o);
+/*print va_arg argument as lowercase hexadecimal*/
 int print_x(va_list x);
 int print_X(va_list X);
 int print_rot13(va_list R);
